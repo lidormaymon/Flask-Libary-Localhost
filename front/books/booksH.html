@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../CSS/booksH.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="booksH.html">Books</a></li>
+                <li><a href="../customers/customersH.html">Customers</a></li>
+                <li><a href="../loans/loansH.html">Loans</a></li>
+            </ul>
+        </nav>
+        <div class="subnavbar">
+            <ul>
+                <li><a href="booksH.html">List</a></li>
+                <li><a href="add_book.html">Add book</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="editBookDisplay">
+        <div class="container">
+            <i class="uil uil-multiply" id="closeButton" onclick="closeEdit()"></i>
+            <div class="title">Edit book</div>
+            Name of the book<br>
+            <input id="book_name"><br>
+            Name of the author<br>
+            <input id="author_name"><br>
+            Date of released<br>
+            <input id="date_released"><br>
+            Quantity<br>
+            <input id="quantity_book"><br>
+            Type of the book(1:Up to 10 days, 2:Up to 5 days, 3:Up to 2 days)<br>
+            <input id="type_book"><br>
+            <button id="sumbitBook"">Sumbit</button>
+        </div>
+    </div>
+    <div id="displayDelete">
+        <div class="container-delete">
+            <i class="uil uil-multiply" id="closeButton" onclick="closeDele()"></i>
+            <div class="warning">WARNING!!!</div>
+            <div class="MSG">
+                Are you sure you want to delete the book?
+            </div>
+            <div class="buttons-delete">
+                <button id="yesBtn" onclick="deleteBook()">Yes</button>
+                <button id="noBtn" onclick="closeDele()">No</button>
+            </div>
+        </div>
+    </div>
+    <div class=" title">Search book:</div><br>
+    <div>Select the filter you wish to use:</div>
+    <div class="checkbox-container">
+        <input type="radio" id="searchIDBox" onchange="checkBox()" class="searchBox" name="searchBox"><!--Giving it name so it wouldn't be able to check both of them -->
+        <label for="searchID">ID</label>
+        <input type="radio" id="searchNameBox"onchange="checkBox()"  class="searchBox" name="searchBox">
+        <label for="searchID">Name</label>
+        <input type="radio" id="searchAuthorBox" onchange="checkBox()" class="searchBox" name="searchBox">
+        <label for="searchID">Author</label>
+      </div>
+    <input type="search" id="search_book_name" placeholder="Search by book..." oninput="searchBooksName()">
+    <input type="search" id="search_book_id" placeholder="Search by ID..." oninput="searchBooksID()">
+    <input type="search" id="search_author_name" placeholder="Search by author..." oninput="searchAuthorName()">
+    <div id="searchMSG"></div>
+    <div class="title" id="title"></div>
+    <div id="booksDisplay"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+    <script src="../JS/booksH.js"></script>
+    </body>
+</html>

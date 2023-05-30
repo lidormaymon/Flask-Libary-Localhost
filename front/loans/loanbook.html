@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+
+        }
+
+        .container .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .container input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .container button {
+            padding: 20px 70px;
+            border-radius: 30px;
+            font-weight: 600;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .container button:hover {
+            background-color: #555;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan book</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../books/booksH.html">Books</a></li>
+                <li><a href="../customers/customersH.html">Customers</a></li>
+                <li><a href="loansH.html">Loans</a></li>
+            </ul>
+        </nav>
+        <div class="subnavbar">
+            <ul>
+                <li><a href="loansH.html">List</a></li>
+                <li><a href="loanbook.html">Loan</a></li>
+                <li><a href="active_loans.html">Active Loans</a></li>
+                <li><a href="expiredLoans.html">Expired Loans</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="title">Add loan:</div>
+        ID of customer<br>
+        <input id="custID" placeholder="Get the ID from customers"><br>
+        ID of book<br>
+        <input id="bookID" placeholder="Get the ID from books"><br>
+        Date of loan<br>
+        <input id="loanDate" placeholder="DD/MM/YYYY"><br>
+        <button onclick="addLoan()">Sumbit</button>
+    </div>
+    <div id="display"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+    <script src="../JS/loanbook.js"></script>
+</body>
+
+</html>

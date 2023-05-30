@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        input {
+            width: 100%;
+            height: 45px;
+            border-radius: 30px;
+        }
+
+
+        .MSG {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+            top: 30px;
+            text-align: center;
+        }
+
+
+        #search-loan-book {
+            display: none;
+        }
+
+        .searchBox {
+            height: 50px;
+            width: 15px;
+        }
+
+
+        .checkbox-container {
+            display: flex;
+        align-items: center;
+        }
+
+        .checkbox-container label {
+        margin-right: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loans</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../books/booksH.html">Books</a></li>
+                <li><a href="../customers/customersH.html">Customers</a></li>
+                <li><a href="loansH.html">Loans</a></li>
+            </ul>
+        </nav>
+        <div class="subnavbar">
+            <ul>
+                <li><a href="loansH.html">List</a></li>
+                <li><a href="loanbook.html">Loan</a></li>
+                <li><a href="active_loans.html">Active Loans</a></li>
+                <li><a href="expiredLoans.html">Expired Loans</a></li>
+            </ul>
+        </div>
+    </header>
+    <h1>View all loans(Active loans, and returned)</h1>
+    <div class="title">Search loan:</div><br>
+    <div>Select the filter you wish to use:</div>
+    <div class="checkbox-container">
+        <input type="radio" id="searchCustomerBox" onchange="checkBox()" class="searchBox" name="searchBox"><!--Giving it name so it wouldn't be able to check both of them -->
+        <label for="searchID">Customer</label>
+        <input type="radio" id="searchBookBox"onchange="checkBox()"  class="searchBox" name="searchBox">
+        <label for="searchID">Book</label>
+    </div>
+    <input id="search-loan-customer" placeholder="Search customer name..." type="search" oninput="searchLoanCustomer()">
+    <input id="search-loan-book" placeholder="Search book name..." type="search" oninput="searchLoanBook()"><br>
+    <div id="searchMSG"></div>
+    <div class="title" id="count_loans"></div>
+    <div id="loansDisplay"></div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+    <script src="../JS/loansH.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../CSS/expiredLoans.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expired Loans</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../books/booksH.html">Books</a></li>
+                <li><a href="../customers/customersH.html">Customers</a></li>
+                <li><a href="loansH.html">Loans</a></li>
+            </ul>
+        </nav>
+        <div class="subnavbar">
+            <ul>
+                <li><a href="loansH.html">List</a></li>
+                <li><a href="loanbook.html">Loan</a></li>
+                <li><a href="active_loans.html">Active Loans</a></li>
+                <li><a href="expiredLoans.html">Expired Loans</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="editLoanDisplay">
+        <div class="container">
+            <i class="uil uil-multiply" id="closeButton" onclick="closeEdit()"></i>
+            <div class="title">Edit loan</div>
+            Customer ID<br>
+            <input id="customer_id"><br>
+            Book ID<br>
+            <input id="book_id"><br>
+            Loan Date<br>
+            <input id="loan_date"><br>
+            Return Date<br>
+            <input id="return_date"><br>
+            <button id="sumbitLoan"">Sumbit</button>
+        </div>
+    </div>
+    <div id="displayDelete">
+        <div class="container-delete">
+            <i class="uil uil-multiply" id="closeButton" onclick="closeDele()"></i>
+            <div class="warning">WARNING!!!</div>
+            <div class="MSG">
+                Are you sure you want to return the loan?
+            </div>
+            <div class="buttons-delete">
+                <button id="yesBtn" onclick="returnLoan()">Yes</button>
+                <button id="noBtn" onclick="closeDele()">No</button>
+            </div>
+        </div>
+    </div>
+    <h1>Expired Loans</h1>
+    <div class="title">Expired Dates:</div>
+    <div id="display"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+    <script src="../JS/expired_loans.js"></script>
+</body>
+</html>
