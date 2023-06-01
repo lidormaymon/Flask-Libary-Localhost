@@ -455,7 +455,7 @@ def add_loan():
     return "A new record was created."
 #End of function
 
-#Function of updating loan
+#Function of updating loan/begin used for returning loan as well, by updating only the status column
 @app.route('/loans-update/<int:id>', methods=['PUT'])
 def update_loan(id):
     data = request.get_json()
@@ -472,10 +472,10 @@ def update_loan(id):
         return 'sucess'
 #End function update loan
 
-#Function of returning loan
-@app.route('/deleteLoan/<int:loan_id>', methods=['DELETE'])
-def delete_loan(loan_id):
-    loan = Loans.query.get(loan_id)
+#Function of deleting loan
+@app.route('/delete-loan/<int:id>', methods=['DELETE'])
+def delete_loan(id):
+    loan = Loans.query.get(id)
     if loan:
         db.session.delete(loan)
         db.session.commit()
